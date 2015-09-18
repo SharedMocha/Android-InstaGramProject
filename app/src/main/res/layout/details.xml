@@ -1,0 +1,34 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InstagramMainActivity">
+
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/imageid"
+        android:layout_alignParentTop="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/nameid"
+        android:layout_below="@id/imageid"
+        android:textColor="#0000FF"
+/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/detailsid"
+        android:layout_below="@+id/imageid"
+        android:layout_toRightOf="@+id/nameid"
+        android:layout_alignTop="@id/nameid"
+        android:layout_alignWithParentIfMissing="true"
+        />
+</RelativeLayout>

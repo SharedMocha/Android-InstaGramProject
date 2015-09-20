@@ -1,6 +1,7 @@
 package com.apps.interfaces.services;
 
 import android.content.Context;
+import android.text.format.DateUtils;
 import android.util.Log;
 
 import com.apps.adapters.restfuladapter;
@@ -48,15 +49,34 @@ public class restfulconnections {
                          tempdate.username = imageorvideoMasterObject.getJSONObject("user").getString("username");
                          tempdate.caption = imageorvideoMasterObject.getJSONObject("caption").getString("text");
                          tempdate.imageurl = imageorvideoMasterObject.getJSONObject("images").getJSONObject("standard_resolution").getString("url");
+                         tempdate.likes = imageorvideoMasterObject.getJSONObject("likes").getString("count");
+                         tempdate.userimageurl = imageorvideoMasterObject.getJSONObject("user").getString("profile_picture");
+                         tempdate.likes = tempdate.likes+" likes";
                          Log.e("type", tempdate.mediatype);
                          Log.e("name", tempdate.username);
                          Log.e("caption", tempdate.caption);
                          Log.e("iameURL", tempdate.imageurl);
+                         Log.e("likes",tempdate.likes);
+                         //tempdate.likes = imageorvideoMasterObject.getJSONObject("likes").getInt("likes");
+
+                         if(imageorvideoMasterObject.isNull("location"))
+                         {
+                             tempdate.location = "No Location";
+                         }else
+                         {
+                             tempdate.location = imageorvideoMasterObject.getJSONObject("location").getString("name");
+                         }
+
+                         tempdate.datetimesnew = imageorvideoMasterObject.getLong("created_time");
+                         //String Date = (String) DateUtils.getRelativeTimeSpanString(imageorvideoMasterObject.getLong("created_time")*1000);
+                         String date = (String) DateUtils.getRelativeTimeSpanString(tempdate.datetimesnew*1000,System.currentTimeMillis(),DateUtils.SECOND_IN_MILLIS);
+                         date = date.toString().substring(0,2).trim();
+                         String datestemp = date+""+"s";
+                         tempdate.datetime = datestemp;
+                         //Log.e("likes", Integer.toString(tempdate.likes));
+                         //Log.e("location", tempdate.datetime);
                          Arraydataobject.add(tempdate);
                          details.add(tempdate);
-
-
-                         Log.e("namo", Arraydataobject.get(i).username);
                      }
                  } catch (Exception e) {
                      Log.e("Error", "Unable to Fetch Data");

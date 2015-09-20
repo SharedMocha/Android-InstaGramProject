@@ -1,22 +1,106 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".InstagramMainActivity">
 
-
     <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/imageid"
-        android:layout_alignParentTop="true"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="5dp"
+        android:paddingTop="12dp"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:id="@+id/useridimage"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/useridimage"
+        android:paddingLeft="2dp"
+        android:paddingTop="6dp"
+        android:layout_centerHorizontal="true"
         android:text="New Text"
-        android:id="@+id/nameid"
+        android:id="@+id/nameontop"
+        android:textSize="20sp"
+        android:layout_alignParentTop="true"
+        android:textColor="#0000FF"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="1dp"
+        android:paddingLeft="2dp"
+        android:text="New Text"
+        android:id="@+id/locationn"
+        android:layout_below="@id/nameontop"
+        android:layout_toRightOf="@id/useridimage"
+        android:drawablePadding="8dp"
+
+
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:paddingTop="7dp"
+        android:layout_alignParentEnd="true"
+        android:paddingRight="50dp"
+        android:gravity="right"
+        android:textSize="20sp"
+        android:id="@+id/datetime"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@id/nameontop"
+
+        />
+
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="10dp"
+        android:paddingTop="15dp"
+        android:scaleType="fitXY"
+        android:layout_below="@id/locationn"
+        android:adjustViewBounds="true"
+        android:id="@+id/imageid"
+
+
+
+        />
+
+    <TextView
+        android:paddingLeft="8dp"
+        android:paddingTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="New Text"
+        android:id="@+id/likes"
+        android:textSize="20sp"
         android:layout_below="@id/imageid"
+        android:layout_alignParentLeft="true"
+
+        />
+
+
+
+    <TextView
+        android:paddingLeft="8dp"
+        android:paddingTop="2dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:textSize="20sp"
+        android:id="@+id/nameid"
+        android:layout_below="@id/likes"
         android:textColor="#0000FF"
 />
 
@@ -24,9 +108,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:paddingTop="2dp"
         android:text="New Text"
         android:id="@+id/detailsid"
-        android:layout_below="@+id/imageid"
+        android:textSize="20sp"
+        android:layout_below="@+id/likes"
         android:layout_toRightOf="@+id/nameid"
         android:layout_alignTop="@id/nameid"
         android:layout_alignWithParentIfMissing="true"

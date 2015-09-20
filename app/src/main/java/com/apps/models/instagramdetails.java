@@ -7,7 +7,11 @@ public class instagramdetails {
     public String mediatype;
     public String username;
     public String imageurl;
-    public int likes;
+    public String likes;
+    public String location;
+    public long datetimesnew;
+    public String datetime;
     public String caption;
+    public String userimageurl;
 
 }

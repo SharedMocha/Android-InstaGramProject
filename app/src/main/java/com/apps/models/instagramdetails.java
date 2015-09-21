@@ -13,5 +13,6 @@ public class instagramdetails {
     public String datetime;
     public String caption;
     public String userimageurl;
+    public String nexturl;
 
 }

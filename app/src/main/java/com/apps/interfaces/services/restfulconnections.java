@@ -41,6 +41,7 @@ public class restfulconnections {
                  try {
                      arrayfeed = response.getJSONArray("data");
                      details.clear();
+                     String nexturl = (String) response.getJSONObject("pagination").get("next_url");
                      for (int i = 0; i < arrayfeed.length(); i++) {
                          instagramdetails tempdate = new instagramdetails();
                          JSONObject imageorvideoMasterObject = arrayfeed.getJSONObject(i);
@@ -52,6 +53,7 @@ public class restfulconnections {
                          tempdate.likes = imageorvideoMasterObject.getJSONObject("likes").getString("count");
                          tempdate.userimageurl = imageorvideoMasterObject.getJSONObject("user").getString("profile_picture");
                          tempdate.likes = tempdate.likes+" likes";
+                         tempdate.nexturl = nexturl;
                          Log.e("type", tempdate.mediatype);
                          Log.e("name", tempdate.username);
                          Log.e("caption", tempdate.caption);
